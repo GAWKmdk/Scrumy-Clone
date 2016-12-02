@@ -1,0 +1,31 @@
+<template name="board_list">
+    <div class="board_list">
+            <div class="well-white">
+                <legend>
+                    Current Business Boards
+                    <a href="{{pathFor 'board_new'}}" class="btn btn-primary pull-right">Create a New Board</a>
+                </legend>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Author</th>
+                            <th>Date Created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each boards}}
+                        <tr>
+                            <td><a href="{{pathFor 'board'}}">{{name}}</a></td>
+                            <td>{{{typeBoardLabel type}}}</td>
+                            <td>{{userName}}</td>
+                            <td> {{formatDate dateCreated}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</template>
